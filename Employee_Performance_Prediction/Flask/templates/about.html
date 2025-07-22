@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <style>
+    body {
+      background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ url_for('static', filename='h.png') }}");
+      background-size: cover;
+      background-color: powderblue;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <strong><a class="navbar-brand" href="{{ url_for('home') }}">Employee Performance Prediction Using Machine Learning</a></strong>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ url_for('home') }}" class="btn btn-info btn-lg">Home</a></li>
+      <li><a href="{{ url_for('about') }}" class="btn btn-info btn-lg">About</a></li>
+      <li><a href="{{ url_for('predict') }}" class="btn btn-primary btn-lg">Predict</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <center>
+    <h2 style="background: linear-gradient(to right, rgba(201, 201, 201, 0.6), rgba(201, 201, 201, 0.6));color:black;margin-top:20%;margin-right:20 %;border-radius:10px">
+      <p>
+        Any business's success depends on its employees.<br />
+        Businesses that realize this are concerned about employee output and productivity.<br />
+        Productivity has a compounding effect at different levels in the workplace, meaning that high productivity at a lower level or vice versa can cascade.<br />
+        Hence, analysis of performance of employees in any organization is the need of the hour.
+      </p>
+    </h2>
+  </center>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

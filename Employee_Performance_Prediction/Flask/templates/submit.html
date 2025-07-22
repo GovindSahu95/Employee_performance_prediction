@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Output</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-image: url("{{ url_for('static', filename='sub.png') }}");
+      background-size: cover;
+      background-color: LightSteelBlue;
+    }
+    h3.big {
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <strong>
+        <a class="navbar-brand" href="{{ url_for('home') }}">Employee Performance Prediction Using Machine Learning</a>
+      </strong>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ url_for('home') }}" class="btn btn-info btn-lg">Home</a></li>
+      <li><a href="{{ url_for('about') }}" class="btn btn-info btn-lg">About</a></li>
+      <li><a href="{{ url_for('predict') }}" class="btn btn-primary btn-lg">Predict</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container"style="width:70%">
+  <h1 style="background-color:white; margin-top:23%; width:100%;">
+    Based on the given input,The Employee is:&nbsp;&nbsp;<span style="color:green;font-weight:bold;font-family:Times new roman;">" {{ prediction_text }} "</span>
+  </h1>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

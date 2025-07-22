@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Predict</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url("{{ url_for('static', filename='Pred.png') }}");
+      background-size: cover;
+      background-color: CadetBlue;
+    }
+    h3.big {
+      line-height: 1.8;
+    }
+    .form-section {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <strong><a class="navbar-brand" href="{{ url_for('home') }}">Employee Performance Prediction</a></strong>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ url_for('home') }}" class="btn btn-info btn-lg">Home</a></li>
+      <li><a href="{{ url_for('about') }}" class="btn btn-info btn-lg">About</a></li>
+      <li><a href="{{ url_for('predict') }}" class="btn btn-primary btn-lg">Predict</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container form-section">
+  <form action="{{ url_for('prediction') }}" method="post">
+
+    <!-- Form fields (same as your original code) -->
+    <!-- Quarter & Department -->
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <label for="f1">Quarter</label>
+        <input class="form-control" id="f1" name="quarter" required type="text">
+      </div>
+      <div class="col-xs-1"></div>
+      <div class="col-xs-3">
+        <label for="f2">Department</label>
+        <input class="form-control" id="f2" name="department" required type="text">
+      </div>
+    </div>
+
+    <!-- Day & Team -->
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <label for="f3">Day</label>
+        <input class="form-control" id="f3" name="day" required type="text">
+      </div>
+      <div class="col-xs-1"></div>
+      <div class="col-xs-3">
+        <label for="f4">Team</label>
+        <input class="form-control" id="f4" name="team" required type="text">
+      </div>
+    </div>
+
+    <!-- Targeted Productivity & SMV -->
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <label for="f5">Targeted Productivity</label>
+        <input class="form-control" id="f5" name="targeted_productivity" required type="text">
+      </div>
+      <div class="col-xs-1"></div>
+      <div class="col-xs-3">
+        <label for="f6">SMV</label>
+        <input class="form-control" id="f6" name="smv" required type="text">
+      </div>
+    </div>
+
+    <!-- Overtime & Incentive -->
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <label for="f7">Over Time</label>
+        <input class="form-control" id="f7" name="over_time" required type="text">
+      </div>
+      <div class="col-xs-1"></div>
+      <div class="col-xs-3">
+        <label for="f8">Incentive</label>
+        <input class="form-control" id="f8" name="incentive" required type="text">
+      </div>
+    </div>
+
+    <!-- Idle Time & Idle Men -->
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <label for="f9">Idle Time</label>
+        <input class="form-control" id="f9" name="idle_time" required type="text">
+      </div>
+      <div class="col-xs-1"></div>
+      <div class="col-xs-3">
+        <label for="f10">Idle Men</label>
+        <input class="form-control" id="f10" name="idle_men" required type="text">
+      </div>
+    </div>
+
+    <!-- Style Change & Workers -->
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <label for="f11">No. of Style Change</label>
+        <input class="form-control" id="f11" name="no_of_style_change" required type="text">
+      </div>
+      <div class="col-xs-1"></div>
+      <div class="col-xs-3">
+        <label for="f12">No. of Workers</label>
+        <input class="form-control" id="f12" name="no_of_workers" required type="text">
+      </div>
+    </div>
+
+    <!-- Month -->
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <label for="f13">Month</label>
+        <input class="form-control" id="f13" name="month" required type="text">
+      </div>
+    </div>
+
+    <!-- ✅ Submit button -->
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-lg">SUBMIT</button>
+    </div>
+
+  </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
